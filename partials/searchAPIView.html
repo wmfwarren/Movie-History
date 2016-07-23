@@ -1,0 +1,14 @@
+<h1>Please Enter a Movie Title</h1>
+<!-- When the search box is used the filled and enter is pressed movie data will appear -->
+<input type="text" ng-model="searchText" placeholder="Search by Title..." ng-keyup="$event.keyCode == 13 &&searchTitle(searchText)">
+
+<div class="" >
+	<h3>{{searchedMovie.title}}</h3>
+	<img src="{{searchedMovie.poster}}" alt="poster">
+	<h4>{{searchedMovie.year}}</h4>
+	<ul ng-repeat="actor in searchedMovie.actors">
+		<li>{{actor}}</li>
+	</ul>
+	<p>{{searchedMovie.description}}</p>
+</div>
+<button ng-click="addToCollection(searchedMovie)">Add to Collection</button>
