@@ -1,2 +1,2 @@
-# A Movie History App
+# A Movie Watching History App
 
