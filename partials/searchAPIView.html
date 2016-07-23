@@ -6,7 +6,7 @@
 	<h3>{{searchedMovie.title}}</h3>
 	<img src="{{searchedMovie.poster}}" alt="poster">
 	<h4>{{searchedMovie.year}}</h4>
-	<ul ng-repeat="actor in searchedMovie.actors">
+	<ul class="actorList" ng-repeat="actor in searchedMovie.actors">
 		<li>{{actor}}</li>
 	</ul>
 	<p>{{searchedMovie.description}}</p>

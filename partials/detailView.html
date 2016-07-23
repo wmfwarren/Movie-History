@@ -2,7 +2,7 @@
 <img src="{{selectedMovie.poster}}" alt="poster">
 <h2>{{selectedMovie.title}}</h2>
 <h3>{{selectedMovie.year}}</h3>
-<ul ng-repeat="actor in selectedMovie.actors">
+<ul class="actorList" ng-repeat="actor in selectedMovie.actors">
 		<li>{{actor}}</li>
 </ul>
 <p>{{selectedMovie.description}}</p>

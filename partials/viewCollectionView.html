@@ -5,7 +5,7 @@
 		<h3>{{movie.title}}</h3>
 		<a href="#/movies/details/{{movie.id}}"><img src="{{movie.poster}}" alt="poster"></a>
 		<h4>{{movie.year}}</h4>
-		<ul ng-repeat="actor in movie.actors">
+		<ul class="actorList" ng-repeat="actor in movie.actors">
 			<li>{{actor}}</li>
 		</ul>
 		<p>{{movie.description}}</p>
