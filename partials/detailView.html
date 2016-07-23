@@ -1,9 +1,19 @@
-<h1>Your Movie Details</h1>
-<img src="{{selectedMovie.poster}}" alt="poster">
-<h2>{{selectedMovie.title}}</h2>
-<h3>{{selectedMovie.year}}</h3>
-<ul class="actorList" ng-repeat="actor in selectedMovie.actors">
-		<li>{{actor}}</li>
-</ul>
-<p>{{selectedMovie.description}}</p>
-<button type="button" ng-click="deleteMovieCall(selectedMovie.id)">Remove from Collection</button>
+<div class="container center-align">
+	<div class="row">
+		<div class="col s8 offset-s2 titleHeightSetter">
+			<h1>Your Movie Details</h1>
+		</div>
+		<div class="col s6 offset-s3 card card-inline">
+			
+			<img src="{{selectedMovie.poster}}" alt="poster">
+	
+			<h2>{{selectedMovie.title}}</h2>
+			<h3>{{selectedMovie.year}}</h3>
+			<ul class="actorList" ng-repeat="actor in selectedMovie.actors">
+					<li>{{actor}}</li>
+			</ul>
+			<p>{{selectedMovie.description}}</p>
+			<button type="button" ng-click="deleteMovieCall(selectedMovie.id)">Remove from Collection</button>
+		
+	</div>
+</div>
