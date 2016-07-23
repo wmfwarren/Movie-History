@@ -15,19 +15,19 @@
 		
 		$routeProvider.
 		when("/movies/collection", {
-		templateUrl: "viewCollectionView.html",
+		templateUrl: "partials/viewCollectionView.html",
 		controller: "collectionCTRL"
 		}).
 		when("/movies/search", {
-		templateUrl: "searchAPIView.html",
+		templateUrl: "partials/searchAPIView.html",
 		controller: "searchCTRL"
 		}).
 		when("/login", {
-		templateUrl: "loginView.html",
+		templateUrl: "partials/loginView.html",
 		controller: "loginCTRL"
 		}).
 		when("/logout", {
-		templateUrl: "logoutView.html",
+		templateUrl: "partials/logoutView.html",
 		controller: "logoutCTRL"
 		}).
 		otherwise("/login");
