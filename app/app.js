@@ -22,6 +22,10 @@
 		templateUrl: "partials/searchAPIView.html",
 		controller: "searchCTRL"
 		}).
+		when("/movies/details/:movieId", {
+		templateUrl: "partials/detailView.html",
+		controller: "detailViewCTRL"
+	}).
 		when("/login", {
 		templateUrl: "partials/loginView.html",
 		controller: "loginCTRL"

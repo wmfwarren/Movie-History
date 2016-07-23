@@ -13,7 +13,7 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 					movieCollection[key].id = key;
 					movies.push(movieCollection[key]);
 				});
-				resolve(movieObject);
+				resolve(movies);
 			})
 			.error((error) => {
 				reject(error);
@@ -38,7 +38,20 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 
 	//PUT function to edit rating
 
-	//DELETE function to remove from DB
-
-	return {getMovieList, postNewMovie}
+	var deleteMovie = function(listMovieID) {
+			console.log(listMovieID, "this is delete movie")
+			return $q((resolve, reject) => {
+				$http.delete(
+					`${FirebaseURL}/movies/${listMovieID}.json`
+				)
+				.success((data) => {
+					// console.log("Data from delete", data );
+					resolve(data);
+				})
+				.error((error) => {
+					reject(error);
+				});
+			});
+		};	
+	return {getMovieList, postNewMovie, deleteMovie}
 })
