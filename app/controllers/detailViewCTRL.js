@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("detailViewCTRL", function($scope, $location, $routeParams, dataFactory) {
+app.controller("detailViewCTRL", function($scope, $route, $location, $routeParams, dataFactory) {
 
 	$scope.movies = [];
  //function to remove from collection and delete from FB

@@ -3,7 +3,7 @@
 app.factory("firebaseAuthFactory", function() {
 
 	var currentUserID = null;
-	var provider = new firebase.auth.GoogleAuthProvider();
+	const provider = new firebase.auth.GoogleAuthProvider();
 
 	// This watches for log out or log in by a user, then assigned the hash
 	// to the currentUserID variable

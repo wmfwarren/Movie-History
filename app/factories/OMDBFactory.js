@@ -1,7 +1,7 @@
 "use strict";
 
 app.factory("OMDBFactory", function($q, $http, MoviesURL) {
-	var newMovie = {
+	const newMovie = {
 		title: "Persona",
 		poster: "http://ia.media-imdb.com/images/M/MV5BMTc1OTgxNjYyNF5BMl5BanBnXkFtZTcwNjM2MjM2NQ@@._V1_SX300.jpg",
 		year: "1966",
