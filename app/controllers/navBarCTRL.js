@@ -19,4 +19,4 @@ app.controller("navBarCTRL", function($scope, $location) {
 				url: "#/movies/search"
 			}
 	];
-})
+});

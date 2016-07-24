@@ -1,8 +1,10 @@
 "use strict";
 
-app.directive("starRating", () =>{
+app.directive("starRating", function () {
+	console.log("Star directive started");
 	return {
-		restrict: 'EA',
-		templateURL: "../templates/starRating.html"
-	}
-})
+		restrict: 'A',
+		// scope: true,
+		templateURL: "../../templates/starRating.html"
+	};
+});

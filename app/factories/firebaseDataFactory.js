@@ -3,7 +3,7 @@
 app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) {
 
 	//get movies from firebase
-	var getMovieList = function() {
+	const getMovieList = function() {
 		let movies = [];
 		return $q((resolve, reject) => {
 			$http.get(`${FirebaseURL}/movies.json?orderBy="uid"&equalTo"${firebaseAuthFactory.currentUserID}"`)
@@ -21,7 +21,7 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 		});
 	};
 	//add a totally new movie to firebase
-	var postNewMovie = function(newMovie) {
+	const postNewMovie = function(newMovie) {
 		return $q((resolve, reject) => {
 			$http.post(
 				`${FirebaseURL}/movies.json`,
@@ -36,7 +36,7 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 		});
 	};
 
-	var putEdits = function(movie) {
+	const putEdits = function(movie) {
 		return $q((resolve, reject) => {
 			$http.put(`${FirebaseURL}/movies/${movie.id}.json`, movie)
 			.success((data) => {
@@ -46,11 +46,11 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 			.error((error) => {
 				reject(error);
 			});
-		})
-	}
+		});
+	};
 
-	var deleteMovie = function(listMovieID) {
-			console.log(listMovieID, "this is delete movie")
+	const deleteMovie = function(listMovieID) {
+			console.log(listMovieID, "this is delete movie");
 			return $q((resolve, reject) => {
 				$http.delete(
 					`${FirebaseURL}/movies/${listMovieID}.json`
@@ -64,5 +64,5 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 				});
 			});
 		};	
-	return {getMovieList, postNewMovie, deleteMovie, putEdits}
-})
+	return {getMovieList, postNewMovie, deleteMovie, putEdits};
+});

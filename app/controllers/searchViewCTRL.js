@@ -16,7 +16,7 @@ $scope.searchTitle = function(title){
 		OMDBFactory.newMovie.description = movieData.Plot;
 		// console.log("movie", movieData);
 		// console.log("newMovie", OMDBFactory.newMovie);
-	})
+	});
 };
 
 $scope.addToCollection = function(newMovieObject){
@@ -31,4 +31,4 @@ $scope.addToCollection = function(newMovieObject){
 	//ask for a star rating
 };
 
-})
+});

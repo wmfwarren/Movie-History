@@ -6,7 +6,7 @@ app.controller("collectionCTRL", function($scope, $location, dataFactory, fireba
  dataFactory.getMovieList()
  .then ((moviesArray) => {
  	$scope.movies = moviesArray;
- })
+ });
  //function to allow rerating of movies
  //
-})
+});

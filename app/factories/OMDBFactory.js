@@ -12,7 +12,7 @@ app.factory("OMDBFactory", function($q, $http, MoviesURL) {
 		uid: null
 	};
 	//get the movie data based on input in the search field.
-	var getMovieByTitle = function(title){
+	const getMovieByTitle = function(title){
 		console.log("title", title);
 		return new $q((resolve, reject) => {
 			$http.get(`${MoviesURL}/?t=${title}&y=&plot=full&r=json`)
@@ -26,5 +26,5 @@ app.factory("OMDBFactory", function($q, $http, MoviesURL) {
 		});
 	};
 
-	return {newMovie, getMovieByTitle}
-})
+	return {newMovie, getMovieByTitle};
+});

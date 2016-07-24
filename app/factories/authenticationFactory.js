@@ -7,10 +7,10 @@ app.factory("firebaseAuthFactory", function() {
 
 	// This watches for log out or log in by a user, then assigned the hash
 	// to the currentUserID variable
-	firebase.auth().onAuthStateChanged( (user) => {
+	firebase.auth().onAuthStateChanged((user) => {
 		if(user) {
 			currentUserID = user.uid;
-			console.log(currentUserID, "logged in")
+			console.log(currentUserID, "logged in");
 		} else {
 			currentUserID = null;
 			console.log("no one logged in" );
@@ -19,18 +19,18 @@ app.factory("firebaseAuthFactory", function() {
 
 	// This allows auth with the provider variable (Google sign in) ans
 	// then logs the user in with a sign in window
-	var authWithProvider = function(){
+	const authWithProvider = function(){
 		return firebase.auth().signInWithPopup(provider);
-	}
+	};
 
-	var isAuthenticated = function() {
+	const isAuthenticated = function() {
 		return (currentUserID) ? true : false;
-	}
+	};
 
-	let getUser = function(){
+	const getUser = function(){
 		return currentUserID;
-	}
+	};
 
 
-	return {currentUserID, getUser, isAuthenticated, authWithProvider}
-})
+	return {currentUserID, getUser, isAuthenticated, authWithProvider};
+});

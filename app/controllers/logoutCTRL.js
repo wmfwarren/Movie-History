@@ -12,4 +12,4 @@ app.controller("logoutCTRL", function($scope, $location, firebaseAuthFactory) {
 		  console.log(error);
 		});
 	};
-})
+});
