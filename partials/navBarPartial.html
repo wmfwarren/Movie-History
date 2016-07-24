@@ -1,5 +1,8 @@
 <nav ng-controller="navBarCTRL">
-	<ul class="navLinks" ng-repeat="link in navLink">
-		<li><a href="{{link.url}}" title="{{link.name}}">{{link.name}}</a></li>
-	</ul>
+	<div class="nav-wrapper red darken-3">
+		<a href="#" class="brand-logo">Logo</a>
+		<ul id="nav-mobile" class="right hide-on-small-and-down" ng-repeat="link in navLink">
+			<li><a href="{{link.url}}" title="{{link.name}}">{{link.name}}</a></li>
+		</ul>
+	</div>	
 </nav>

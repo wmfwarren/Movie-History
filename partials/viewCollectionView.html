@@ -1,14 +1,14 @@
 <div class="container center-align">
 	<div class="row">
 	
-		<div class="col s8 offset-s2 titleHeightSetter">
+		<div class="col s8 offset-s2 ">
 			<h3>Filter Your Collection:</h3>
 		</div>
 		<input class="col s4 offset-s4" type="text" ng-model="filterText" placeholder="Filter...">
 
-		<div class="col s6 card offset-s3" ng-repeat="movie in movies | filter: filterText" >
+		<div class="col s6 card offset-s3 red darken-3" ng-repeat="movie in movies | filter: filterText" >
 			<div class="card-image waves-effect waves-block waves-light">
-				<img class="activator" src="{{movie.poster}}" alt="poster">
+				<img class="activator topPadding-1" src="{{movie.poster}}" alt="poster">
 			</div>
 			<div class="card-content">
 				<a href="#/movies/details/{{movie.id}}"><h3>{{movie.title}}</h3></a>

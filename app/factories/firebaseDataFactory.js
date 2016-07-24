@@ -36,7 +36,18 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 		});
 	};
 
-	//PUT function to edit rating
+	var putEdits = function(movie) {
+		return $q((resolve, reject) => {
+			$http.put(`${FirebaseURL}/movies/${movie.id}.json`, movie)
+			.success((data) => {
+				// console.log("Data from delete", data );
+				resolve(data);
+			})
+			.error((error) => {
+				reject(error);
+			});
+		})
+	}
 
 	var deleteMovie = function(listMovieID) {
 			console.log(listMovieID, "this is delete movie")
@@ -53,5 +64,5 @@ app.factory("dataFactory", function(FirebaseURL,$q, $http, firebaseAuthFactory) 
 				});
 			});
 		};	
-	return {getMovieList, postNewMovie, deleteMovie}
+	return {getMovieList, postNewMovie, deleteMovie, putEdits}
 })
